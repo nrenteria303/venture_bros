@@ -1,0 +1,552 @@
+/* _-_-_-_-_-_-_-_-_-_ Global Styles  _-_-_-_-_-_-_-_-_-_*/
+
+:root {
+    font-family: 'Century Gothic', 'Times New Roman', Times, serif;
+    
+}
+
+body {
+    margin: 0;
+    background-color: rgb(27, 27, 27);
+}
+
+
+/* _-_-_-_-_-_-_-_-_-_ Heading Styles  _-_-_-_-_-_-_-_-_-_*/
+
+header {
+    margin-top: 0;
+    background: url(../images/top_image_banner.jpg) no-repeat;
+    background-position-y: 48%;
+    background-size: cover;
+    height: 380px;
+    border-bottom: solid black 1px;
+    box-shadow: 0 3px 12px black;
+}
+
+#header-wrapper {
+    margin: 0 auto;
+
+    /* width: 86%; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
+}
+
+#main-heading,
+#secondary-heading,
+#home-main-heading {
+    text-align: center;
+    /* background-color: rgba(255, 255, 255, .3); */
+}
+
+#main-heading,
+#home-main-heading {
+    width: 86%;
+    letter-spacing: 1.27em;
+    font-size: 2.4em;
+    line-height: 1.7em;
+    margin: 0 auto;
+    color: #191919;
+    text-shadow: white 4px 4px 10px;
+    padding-top: 20px;
+}
+
+#main-heading {
+
+}
+
+#home-main-heading {
+    padding-top: 35px;
+}
+
+#secondary-heading,
+#home-secondary-heading {
+    font-size: 1.36em;
+    letter-spacing: .16em;
+    background-color: rgba(255, 255, 255, .88);
+    margin-top: 190px;
+    padding: 4px 0;
+    text-align: center;
+}
+
+#home-secondary-heading {
+    margin-top: 240px;
+}
+
+#secondary-heading a:link,
+    a:visited {
+        color: black;
+}
+
+#home-secondary-heading a:link,
+    a:visited {
+        color: black;
+}
+
+
+#secondary-heading a:hover,
+#home-secondary-heading a:hover {
+    color: rgb(116, 19, 19);
+}
+
+
+/* _-_-_-_-_-_-_-_-_-_ Main Content (home) Styles  _-_-_-_-_-_-_-_-_-_*/
+
+#home_title_cont {
+    color: white;
+    display: flex;
+}
+
+.as_p {
+    font-weight: bold;
+    margin: 8px 0px 0px 110px;
+    font-size: 26px;
+}
+
+#as_adult,
+#as_swim {
+    color: rgb(27, 27, 27);
+}
+
+main {
+    width: 87%;
+    margin: 0 auto;
+    margin-top: 46px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* _-_-_-_-_-_-_-_-_-_ Main Content (characters) Styles  _-_-_-_-_-_-_-_-_-_*/
+
+#char_bar {
+    margin-top: 18px;
+    margin-bottom: 36px;
+}
+
+#char_bar_groups {
+    text-align: center;
+    color: rgb(143, 143, 143);
+    font-size: 2.1rem;
+}
+
+#venture_fam:hover,
+#osi_agents:hover,
+#monarch_clique:hover,
+#friends:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.character_cont {
+    box-sizing: border-box;
+    width: 900px;  
+    margin: 0 auto;
+    display: flex; 
+    margin-top: 30px;
+}
+
+.character_img {
+    margin: 0 auto;
+    height: 310px;
+}
+
+.character_img:hover {
+    cursor: pointer;
+}
+
+.character_name {
+    color: white;
+    font-size: 1.4em;
+    margin: 20px 0px;
+}
+
+.character_desc {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.character_bio {
+    padding: 0px 12px 6px 14px;
+    margin-left: 15px;
+    border: white solid 2px;
+}
+
+.character_top_line {
+    display: flex;
+}
+
+.spoiler_box,
+.spoiled_box {
+    margin: 14px 20px;
+    border-radius: 8px;
+}
+
+.spoiler_box {
+    background-color: rgb(255, 176, 5)
+}
+
+.spoiler_box:hover {
+    background-color: rgb(202, 138, 0);
+    cursor: pointer;
+}
+
+.spoiled_box {
+    background-color: rgb(163, 0, 0);
+}
+
+.spoiler_text,
+.spoiled_text {
+    color: white;
+    font-size: 1.32em;
+    padding: 6px 9px;
+    margin-bottom: 0;
+}
+
+#dr_venture_img {
+    width: 310px;
+}
+
+#hank_img {
+    width: 265px;
+}
+
+#dean_img {
+    width: 224px;
+}
+
+#brock_img {
+    width: 238px;
+}
+
+#brock_name {
+    margin: 22px opx 15px;
+}
+
+#h21_img {
+    width: 335px;
+}
+
+#h24_img {
+    width: 267px;
+}
+
+#dermott_img {
+    width: 327px;
+}
+
+
+/* _-_-_-_-_-_-_-_-_-_ Main Content (tenzi) Styles  _-_-_-_-_-_-_-_-_-_*/
+
+#tenzi_title {
+    font-size: 4em;
+}
+
+#game_btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+#roll_btn_cont {
+    display: flex;
+    justify-content: space-around;
+}
+
+#roll_dice {
+    background-color: rgb(163, 0, 0);
+    color: white;
+    font-size: 1.48rem;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 1px 22px;
+}
+
+#call_side_btns {
+    width: 54vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.side_btn {
+    padding: 0px 13px;
+    height: 2rem;
+    border-radius: 10px;
+    background: rgb(31, 0, 170);
+    color: white;
+    font-weight: bold;
+}
+
+.side_btn_click {
+    background: white;
+    color: rgb(31, 0, 170);
+}
+
+#time_trial_cont {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+}
+
+#timer_display,
+#go {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: white;
+    height: 40px;
+}
+
+#start_timer_btn {
+    background-color: rgb(0, 38, 255);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 18px;
+    padding: 4px 12px;
+    height: 40px;
+}
+
+#clear_dice_boxes {
+    background-color: white;
+    color: rgb(70, 70, 70);
+    border: silver 1px solid;
+    border-radius: 18px;
+    padding: 4px 10px;
+    font-weight: bold;
+    height: 40px;
+}
+
+#clear_dice_boxes:active {
+    background-color: lightgrey;
+}
+
+#tenzi_dice {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.die {
+    display: flex;
+    flex-direction: column;
+}
+
+.die_display_box {
+    height: 100px;
+    width: 100px;
+    border: white solid 2px;
+    margin: 10px 0 14px;
+}
+
+.die_display_number {
+    color: white;
+    font-size: 4.4rem;
+}
+
+.die_display_number_frozen {
+    color: rgb(151, 151, 151);
+}
+
+.dr_venture_die {
+    background-image: url(../images/dr_venture_die.jpg);
+}
+
+.brock_die {
+    background-image: url(../images/brock_die.jpg);
+}
+
+.hank_die {
+    background-image: url(../images/hank_die.jpg);
+}
+
+.dean_die {
+    background-image: url(../images/dean_die.jpg);
+}
+
+.monarch_die {
+    background-image: url(../images/monarch_die.jpg);
+}
+
+.dr_girlfriend_die {
+    background-image: url(../images/dr_girlfriend_die.jpg);
+}
+
+.henchman_21_die {
+    background-image: url(../images/henchman_21.jpg);
+}
+
+.henchman_24_die {
+    background-image: url(../images/henchman_24.jpg);
+}
+
+.dr_orpheus_die {
+    background-image: url(../images/orpheus.jpg);
+}
+
+.triana_die {
+    background-image: url(../images/triana.jpg);
+}
+
+.molotov_die {
+    background-image: url(../images/molotov.jpg);
+}
+
+.phantom_limb_die {
+    background-image: url(../images/phantom_limb.jpg);
+}
+
+.underbheit_die {
+    background-image: url(../images/underbheit.jpg);
+}
+
+.jonas_sr_die {
+    background-image: url(../images/jonas_sr.jpg);
+}
+
+.jonas_jr_die {
+    background-image: url(../images/jonas_jr.jpg);
+}
+
+.captain_die {
+    background-image: url(../images/captain.jpg);
+}
+
+.killenger_die {
+    background-image: url(../images/killenger.jpg);
+}
+
+.kano_die {
+    background-image: url(../images/kano.jpg);
+}
+
+.action_man_die {
+    background-image: url(../images/action_man.jpg);
+}
+
+.colonel_gentleman_die {
+    background-image: url(../images/colonel_gentleman.jpg);
+}
+
+.dr_venture_die,
+.brock_die,
+.dean_die,
+.hank_die,
+.monarch_die,
+.dr_girlfriend_die,
+.henchman_21_die,
+.henchman_24_die,
+.dr_orpheus_die,
+.triana_die,
+.molotov_die,
+.phantom_limb_die,
+.underbheit_die,
+.jonas_sr_die,
+.jonas_jr_die,
+.captain_die,
+.killenger_die,
+.kano_die,
+.action_man_die,
+.colonel_gentleman_die {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.freeze_btn {
+    background-color: rgb(163, 0, 0);
+    color: white;
+    font-size: 1.15rem;
+    font-weight: bold;
+    border-radius: 14px;
+}
+
+.freeze_btn_frozen {
+    background-color: grey;
+}
+
+#declare_tenzi,
+#log_tenzi {
+    background: linear-gradient(90deg, rgb(65, 255, 230), rgb(179, 179, 179));
+    color: black;
+    font-size: 2.18rem;
+    font-weight: bold;
+    margin: 50px auto 50px;
+    border-radius: 28px;
+    padding: 0px 24px;
+}
+
+#running_score {
+    color: white;
+    text-align: center;
+}
+
+#declare_tenzi:active {
+    background: linear-gradient(90deg, rgb(179, 179, 179), rgb(65, 255, 230));
+}
+
+#tenzi_btn_cont {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* _-_-_-_-_-_-_-_-_-_ Footer Styles  _-_-_-_-_-_-_-_-_-_*/
+
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: center; 
+    background-color: rgb(116, 19, 19);
+    margin-top: 50px;
+    border-top: solid rgb(65, 65, 65) 2px;
+    box-shadow: 0 -3px 12px black;
+}
+
+footer p {
+    font-size: 20px;
+    margin-top: 40px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 9px rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* _-_-_-_-_-_-_-_-_-_   _-_-_-_-_-_-_-_-_-_*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* _-_-_-_-_-_-_-_-_-_ Media Queries Styles  _-_-_-_-_-_-_-_-_-_*/
+
+
+
+
+
+
+
+

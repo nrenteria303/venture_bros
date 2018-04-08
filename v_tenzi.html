@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet">
+      <link rel="stylesheet" href="styles/styles.css">
+      <title>jQuery, Bitch</title>
+  
+  </head>
+  
+  <body>
+    <header class="header">
+      <div id="header-wrapper">
+        <h1 id="home-main-heading">VENTURE BROS.</h1>
+        <nav><h3 id="home-secondary-heading"><a href="index.html">Home</a> | <a href="../char.html">Characters</a> | <a href="#">Venture Tenzi</a></h3></nav>
+      </div>
+    </header>
+
+    <main>
+
+        <div id="tenzi_title_div">
+            <h2 id="tenzi_title">Venture Tenzi!</h2>
+        </div>
+        
+        <div id="tenzi_game">
+            <div id="game_btns">
+                <div id="roll_btn_cont">
+                    <button id="roll_dice">Roll Active Dice</button>
+                </div>
+                <div id="call_side_btns">
+                    <button class="side_btn" id="4_sides">4 Sided Dice</button>
+                    <button class="side_btn side_btn_click" id="6_sides">6 Sided Dice</button>
+                    <button class="side_btn" id="8_sides">8 Sided Dice</button>
+                    <button class="side_btn" id="12_sides">12 Sided Dice</button>
+                    <button class="side_btn" id="20_sides">20 Sided Dice</button>
+                </div>
+            </div>
+
+            <div id="time_trial_cont">
+                <button id="start_timer_btn">Start Time Trial</button>
+                <h1 id="go">GO!</h1>
+                <h1 id="timer_display"></h1>
+                <button id="clear_dice_boxes">Clear Dice</button>
+            </div>
+
+            <div id="tenzi_dice">
+
+                <div class="die" id="die_1">
+                    <div class="die_display_box" id="die_display_number_1">
+                    </div>
+                    <button class="freeze_btn" id="freeze_1">Freeze</button>
+                </div>
+
+                <div class="die" id="die_2">
+                    <div class="die_display_box" id="die_display_number_2">
+                    </div>
+                    <button class="freeze_btn" id="freeze_2">Freeze</button>
+                </div>
+
+                <div class="die" id="die_3">
+                    <div class="die_display_box" id="die_display_number_3">
+                    </div>
+                    <button class="freeze_btn" id="freeze_3">Freeze</button>
+                </div>
+
+                <div class="die" id="die_4">
+                    <div class="die_display_box" id="die_display_number_4">
+                    </div>
+                    <button class="freeze_btn" id="freeze_4">Freeze</button>
+                </div>
+
+                <div class="die" id="die_5">
+                    <div class="die_display_box" id="die_display_number_5">
+                    </div>
+                    <button class="freeze_btn" id="freeze_5">Freeze</button>
+                </div>
+
+                <div class="die" id="die_6">
+                    <div class="die_display_box" id="die_display_number_6">
+                    </div>
+                    <button class="freeze_btn" id="freeze_6">Freeze</button>
+                </div>
+
+                <div class="die" id="die_7">
+                    <div class="die_display_box" id="die_display_number_7">
+                    </div>
+                    <button class="freeze_btn" id="freeze_7">Freeze</button>
+                </div>
+
+                <div class="die" id="die_8">
+                    <div class="die_display_box" id="die_display_number_8">
+                    </div>
+                    <button class="freeze_btn" id="freeze_8">Freeze</button>
+                </div>
+
+                <div class="die" id="die_9">
+                    <div class="die_display_box" id="die_display_number_9">
+                    </div>
+                    <button class="freeze_btn" id="freeze_9">Freeze</button>
+                </div>
+
+                <div class="die" id="die_10">
+                    <div class="die_display_box" id="die_display_number_10">
+                    </div>
+                    <button class="freeze_btn" id="freeze_10">Freeze</button>
+                </div>
+
+            </div>
+
+            <div id="tenzi_btn_cont">
+                <button id="declare_tenzi">Tenzi!</button>
+                <button id="log_tenzi">Log Tenzi!</button>
+            </div>
+        </div>
+
+        <h1 id="running_score"></h1>
+        <!-- End Tenzi Game Div -->
+
+    </main>
+  
+    <footer>
+      <p>&copy;2018</p>
+    </footer>
+  
+  <script src="scripts/jquery-3.3.1.js"></script>
+  <script src="scripts/app.js"></script>
+  </body>
+
+</html>
