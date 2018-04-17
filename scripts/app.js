@@ -1,4 +1,7 @@
 
+// CHADDY POO, SCROLL DOWN TO "Character Page" 
+// SECTION FOR THE AJAX STUFF
+
 // +_+_+_+_+_+_+_+_+_ Variables +_+_+_+_+_+_+_+_+_
 
 const $header = $('.header');
@@ -95,46 +98,97 @@ $header.on({
 // +_+_+_+_+_+_+_+_+_ Character Page +_+_+_+_+_+_+_+_+_
 
 
-$characterBio.hide();
-$spoiledBox.hide();
+var charHTML = '<h2>[ click an image for more info ]</h2> <div id="character_display">';
 
-$characterImg.click(function() {
-    $(this).next().fadeIn(700);
+$('.char_sort').click(function() {
+    $('.char_sort').removeClass('char_sort_clicked');
+    $(this).addClass('char_sort_clicked');
+    var sortKeyword = $('.char_sort_clicked').text();
+
+    // Me trying to use the same method as you for the AJAX part
+    $.ajax({
+        url: "../characters.json",
+        dataType: "json",
+        success: function(response) {
+            for (let character of response.characterList) {
+                charHTML += '<div class="character_cont ';
+                if (character == sortKeyword) {
+                    charHTML += character.sortClass + '" id="' + character.contId + '">';
+                    charHTML += '<img class"character_img" id="' + character.imageId + '" src="' + character.imageSrc + '">';
+                    charHTML += '<div class="character_bio">';
+                    charHTML += '<h3 class="character_name">' + character.name + '</h3>';
+                    charHTML += '<p class="character_desc">' + character.description + '</p></div>';
+                    charHTML += '</div>';
+                }
+                charHTML += '</div>';
+            }
+            $('#character_display').html(charHTML);
+        }
+    });
+    
+    // My girst attempt at the AJAX part 
+    // function displayCharacters(data) {
+    //     charHTML += '<div class="character_cont ';
+    //         $.each( data.characterList, function ( i, character ) {
+    //             if (sortKeyword == data.characterList.subset) {
+    //                 charHTML += character.sortClass + '" id="' + character.contId + '">';
+    //                 charHTML += '<img class"character_img" id="' + character.imageId + '" src="' + character.imageSrc + '">';
+    //                 charHTML += '<div class="character_bio">';
+    //                 charHTML += '<h3 class="character_name">' + character.name + '</h3>';
+    //                 charHTML += '<p class="character_desc">' + character.description + '</p></div>';
+    //                 charHTML += '</div>';
+    //             }
+    //         });
+    //     charHTML += '</div>';
+    //     $('#character_display').html(charHTML);
+    // }
+    // $.getJSON('../characters.json', sortKeyword, displayCharacters);
 });
 
-$spoilerBox.click(function() {
-    $(this).hide();
-    $(this).next().fadeIn(300);
-});
+// BELOW IS THE WAY I DID THIS WITHOUT AJAX
 
-$ventureFam.on("click", function () {
-    $ventures.show();
-    $osi.hide();
-    $monarchy.hide();
-    $ventureFriends.hide();
-});
+// $characterBio.hide();
+// $spoiledBox.hide();
 
-$osiAgents.on("click", function () {
-    $osi.show();
-    $ventures.hide();
-    $monarchy.hide();
-    $ventureFriends.hide();
-});
+// $characterImg.click(function() {
+//     $(this).next().fadeIn(700);
+// });
 
-$monarchClique.on("click", function () {
-    $monarchy.show();
-    $ventures.hide();
-    $osi.hide();
-    $ventureFriends.hide();
-});
+// $spoilerBox.click(function() {
+//     $(this).hide();
+//     $(this).next().fadeIn(300);
+// });
 
-$friends.on("click", function () {
-    $ventureFriends.show();
-    $ventures.hide();
-    $monarchy.hide();
-    $osi.hide();
-});
+// $ventureFam.on("click", function () {
+//     $ventures.show();
+//     $osi.hide();
+//     $monarchy.hide();
+//     $ventureFriends.hide();
+// });
 
+// $osiAgents.on("click", function () {
+//     $osi.show();
+//     $ventures.hide();
+//     $monarchy.hide();
+//     $ventureFriends.hide();
+// });
+
+// $monarchClique.on("click", function () {
+//     $monarchy.show();
+//     $ventures.hide();
+//     $osi.hide();
+//     $ventureFriends.hide();
+// });
+
+// $friends.on("click", function () {
+//     $ventureFriends.show();
+//     $ventures.hide();
+//     $monarchy.hide();
+//     $osi.hide();
+// });
+
+
+// EVERYTHING BELOW THIS IS IRRELEVENT TO AJAX STUFF
 
 // +_+_+_+_+_+_+_+_+_ TENZI GAME +_+_+_+_+_+_+_+_+_
 

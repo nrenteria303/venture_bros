@@ -138,6 +138,9 @@ h2 {
 #monarch_clique:hover,
 #friends:hover {
     cursor: pointer;
+}
+
+.char_sort_clicked {
     color: white;
 }
 
