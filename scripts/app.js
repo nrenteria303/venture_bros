@@ -99,7 +99,9 @@ $header.on({
 
 
 $('.char_sort').click(function() {
-	var $this = $(this);
+    var $this = $(this);
+    $('.char_sort').removeClass('char_sort_clicked');
+    $this.addClass('char_sort_clicked');
 	// var sort_id = $this.attr('id');
 	var sort_id = $this.text();
 
@@ -113,13 +115,14 @@ $('.char_sort').click(function() {
 			$container.empty();
 			
 			for (let i = 0; i < response.length; i++) {
-				// if ( response[i].sortClass === sort_id) {
 				if ( response[i].subset === sort_id) {
-					var $name = $("<h3 />");
-					
-					$name.text(response[i].name);
+					var $characterHTML = '<div class="character_cont ';
+                    $characterHTML += response[i].sortClass + '" id="' + response[i].contId + '">';
+                    $characterHTML += '<img class="character_img" id="' + response[i].imageId + '" src="' + response[i].imageSrc + '">';
 
-					$container.append($name);
+                    $characterHTML += '</div>' // closing char_cont div tag
+
+					$container.append($characterHTML);
 				}
 			}
 		}
@@ -129,8 +132,8 @@ $('.char_sort').click(function() {
 // var charHTML = '<h2>[ click an image for more info ]</h2> <div id="character_display">';
 
 // $('.char_sort').click(function() {
-//     $('.char_sort').removeClass('char_sort_clicked');
-//     $(this).addClass('char_sort_clicked');
+    //  $('.char_sort').removeClass('char_sort_clicked');
+    //  $(this).addClass('char_sort_clicked');
 //     var sortKeyword = $('.char_sort_clicked').text();
 
 //     // Me trying to use the same method as you for the AJAX part
@@ -153,25 +156,7 @@ $('.char_sort').click(function() {
 //             $('#character_display').html(charHTML);
 //         }
 //     });
-    
-//     // My girst attempt at the AJAX part 
-//     // function displayCharacters(data) {
-//     //     charHTML += '<div class="character_cont ';
-//     //         $.each( data.characterList, function ( i, character ) {
-//     //             if (sortKeyword == data.characterList.subset) {
-//     //                 charHTML += character.sortClass + '" id="' + character.contId + '">';
-//     //                 charHTML += '<img class"character_img" id="' + character.imageId + '" src="' + character.imageSrc + '">';
-//     //                 charHTML += '<div class="character_bio">';
-//     //                 charHTML += '<h3 class="character_name">' + character.name + '</h3>';
-//     //                 charHTML += '<p class="character_desc">' + character.description + '</p></div>';
-//     //                 charHTML += '</div>';
-//     //             }
-//     //         });
-//     //     charHTML += '</div>';
-//     //     $('#character_display').html(charHTML);
-//     // }
-//     // $.getJSON('../characters.json', sortKeyword, displayCharacters);
-// });
+
 
 // BELOW IS THE WAY I DID THIS WITHOUT AJAX
 
