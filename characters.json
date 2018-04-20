@@ -1,46 +1,62 @@
 [
-    {
-    "name": "Dr. 'Rusty' Venture",
-    "subset": "Venture Family",
-    "spoiler": false,
-    "description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
-    },
-    {
-    "name": "Hank Venture",
-    "subset": "Venture Family",
-    "spoiler": false,
-    "description": "Henry Allen Venture, or Hank as he prefers to be called, is the oldest of the Venture twins, as well as the more rebellious of the two. He, like his father before him, hates the jet-setting and dangerous life of a de facto boy adventurer, and often expresses this frustration via sass mouth typically directed at Dr. Venture. He idolizes his bodyguard, Brock, and takes every chance he can get to hang around with and attempt to impress him. Hank is also the more girl-crazy of the Venture boys, developing a crush for the compound's Mail Delivery Woman at an early age."
-    },
-    {
-    "name": "Dean Venture",
-    "subset": "Venture Family",
-    "spoiler": false,
-    "description": "Dean Venture, the slightly younger Venture boy, is the far more sensitive, polite, and academically inclined of the two. Dean has a long-term crush on Triana, the daughter of his necromancer neighbor, Dr. Orpheus; he pines after her for years and his intense love for her even allows the magic of Dr. Orpheus to rescue the Venture family a time or two. Dr. Venture often tries to pigeonhole Dean into following in his footsteps and entering the super science game. He goes along begrudgingly, either not wanting to disappoint his father or being too much of a candy-ass to rebel like his brother Hank."
-    },
-    {
-    "name": "Brock Samson",
-    "subset": "Venture Family",
-    "spoiler": false,
-    "description": "Brock Sampson is perhaps the most mythic character in the Venture Bros. universe. Brock joined the army after being thrown out of college and eventually made it into the Office of Secret Intellignce, or OSI. There he eventually earned notoriety and even celebrity status in the organization for his strength, brutality, combat expertise, and incredible effectiveness at his job as a government spy. As the bodyguard to the Venture family, Brock kills any and every threat to the family that comes along (except of course Guild-sanctioned arches, though only for bureaucratic reasons). Brock is the epitome of Robert Plant-esque hypermasculinity and raw sexual energy."
-    },
-    {
-    "name": "Henchman 21",
-    "subset": "Monarch Crew",
-    "spoiler": false,
-    "description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
-    },
-    {
-    "name": "Henchman 24",
-    "subset": "Monarch Crew",
-    "spoiler": true,
-    "spoilerText": "Deceased",
-    "description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
-    },
-    {
-    "name": "Dermott Fictel",
-    "subset": "Friends",
-    "spoiler": true,
-    "spoilerText": "Dr. Venture's Illegitimate Son",
-    "description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
-    }
+	{
+		"name": "Dr. 'Rusty' Venture",
+		"sortClass": "venture_fam",
+		"contId": "dr_venture_cont",
+		"imageID": "dr_venture_img",
+		"imageSrc": "images/dr_venture.jpg",
+		"subset": "Venture Family",
+		"spoiler": false,
+		"description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
+	},
+	{
+		"name": "Hank Venture",
+		"sortClass": "venture_fam",
+		"contId": "hank_cont",
+		"imageID": "hank_img",
+		"imageSrc": "images/hank.jpg",
+		"subset": "Venture Family",
+		"spoiler": false,
+		"description": "Henry Allen Venture, or Hank as he prefers to be called, is the oldest of the Venture twins, as well as the more rebellious of the two. He, like his father before him, hates the jet-setting and dangerous life of a de facto boy adventurer, and often expresses this frustration via sass mouth typically directed at Dr. Venture. He idolizes his bodyguard, Brock, and takes every chance he can get to hang around with and attempt to impress him. Hank is also the more girl-crazy of the Venture boys, developing a crush for the compound's Mail Delivery Woman at an early age."
+	},
+	{
+		"name": "Dean Venture",
+		"sortClass": "venture_fam",
+		"contId": "dean_cont",
+		"imageID": "dean_img",
+		"imageSrc": "images/dean.jpg",
+		"subset": "Venture Family",
+		"spoiler": false,
+		"description": "Dean Venture, the slightly younger Venture boy, is the far more sensitive, polite, and academically inclined of the two. Dean has a long-term crush on Triana, the daughter of his necromancer neighbor, Dr. Orpheus; he pines after her for years and his intense love for her even allows the magic of Dr. Orpheus to rescue the Venture family a time or two. Dr. Venture often tries to pigeonhole Dean into following in his footsteps and entering the super science game. He goes along begrudgingly, either not wanting to disappoint his father or being too much of a candy-ass to rebel like his brother Hank."
+	},
+	{
+		"name": "Brock Samson",
+		"imageSrc": "images/brock.jpg",
+		"subset": "OSI Agents",
+		"spoiler": false,
+		"description": "Brock Sampson is perhaps the most mythic character in the Venture Bros. universe. Brock joined the army after being thrown out of college and eventually made it into the Office of Secret Intellignce, or OSI. There he eventually earned notoriety and even celebrity status in the organization for his strength, brutality, combat expertise, and incredible effectiveness at his job as a government spy. As the bodyguard to the Venture family, Brock kills any and every threat to the family that comes along (except of course Guild-sanctioned arches, though only for bureaucratic reasons). Brock is the epitome of Robert Plant-esque hypermasculinity and raw sexual energy."
+	},
+	{
+		"name": "Henchman 21",
+		"imageSrc": "images/h21.jpg",
+		"subset": "Monarch Crew",
+		"spoiler": false,
+		"description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
+	},
+	{
+		"name": "Henchman 24",
+		"imageSrc": "images/h24.jpg",
+		"subset": "Monarch Crew",
+		"spoiler": true,
+		"spoilerText": "Deceased",
+		"description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
+	},
+	{
+		"name": "Dermott Fictel",
+		"imageSrc": "images/dermott.jpg",
+		"subset": "Friends",
+		"spoiler": true,
+		"spoilerText": "Dr. Venture's Illegitimate Son",
+		"description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
+	}
 ]

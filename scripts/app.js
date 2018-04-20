@@ -1,4 +1,7 @@
 
+// CHADDY POO, SCROLL DOWN TO "Character Page" 
+// SECTION FOR THE AJAX STUFF
+
 // +_+_+_+_+_+_+_+_+_ Variables +_+_+_+_+_+_+_+_+_
 
 const $header = $('.header');
@@ -95,46 +98,110 @@ $header.on({
 // +_+_+_+_+_+_+_+_+_ Character Page +_+_+_+_+_+_+_+_+_
 
 
-$characterBio.hide();
-$spoiledBox.hide();
+$('.char_sort').click(function() {
+    var $this = $(this);
+    $('.char_sort').removeClass('char_sort_clicked');
+    $this.addClass('char_sort_clicked');
+	// var sort_id = $this.attr('id');
+	var sort_id = $this.text();
 
-$characterImg.click(function() {
-    $(this).next().fadeIn(700);
+	$.ajax({
+		url: "../characters.json",
+		dataType: "json",
+		method: "get",
+		success: function(response) {
+			var $container = $('.characters');
+
+			$container.empty();
+			
+			for (let i = 0; i < response.length; i++) {
+				if ( response[i].subset === sort_id) {
+					var $characterHTML = '<div class="character_cont ';
+                    $characterHTML += response[i].sortClass + '" id="' + response[i].contId + '">';
+                    $characterHTML += '<img class="character_img" id="' + response[i].imageId + '" src="' + response[i].imageSrc + '">';
+
+                    $characterHTML += '</div>' // closing char_cont div tag
+
+					$container.append($characterHTML);
+				}
+			}
+		}
+	});
 });
 
-$spoilerBox.click(function() {
-    $(this).hide();
-    $(this).next().fadeIn(300);
-});
+// var charHTML = '<h2>[ click an image for more info ]</h2> <div id="character_display">';
 
-$ventureFam.on("click", function () {
-    $ventures.show();
-    $osi.hide();
-    $monarchy.hide();
-    $ventureFriends.hide();
-});
+// $('.char_sort').click(function() {
+    //  $('.char_sort').removeClass('char_sort_clicked');
+    //  $(this).addClass('char_sort_clicked');
+//     var sortKeyword = $('.char_sort_clicked').text();
 
-$osiAgents.on("click", function () {
-    $osi.show();
-    $ventures.hide();
-    $monarchy.hide();
-    $ventureFriends.hide();
-});
+//     // Me trying to use the same method as you for the AJAX part
+//     $.ajax({
+      //   url: "../characters.json",
+      //   dataType: "json",
+//         success: function(response) {
+//             for (let character of response.characterList) {
+//                 charHTML += '<div class="character_cont ';
+//                 if (character == sortKeyword) {
+//                     charHTML += character.sortClass + '" id="' + character.contId + '">';
+//                     charHTML += '<img class"character_img" id="' + character.imageId + '" src="' + character.imageSrc + '">';
+//                     charHTML += '<div class="character_bio">';
+//                     charHTML += '<h3 class="character_name">' + character.name + '</h3>';
+//                     charHTML += '<p class="character_desc">' + character.description + '</p></div>';
+//                     charHTML += '</div>';
+//                 }
+//                 charHTML += '</div>';
+//             }
+//             $('#character_display').html(charHTML);
+//         }
+//     });
 
-$monarchClique.on("click", function () {
-    $monarchy.show();
-    $ventures.hide();
-    $osi.hide();
-    $ventureFriends.hide();
-});
 
-$friends.on("click", function () {
-    $ventureFriends.show();
-    $ventures.hide();
-    $monarchy.hide();
-    $osi.hide();
-});
+// BELOW IS THE WAY I DID THIS WITHOUT AJAX
 
+// $characterBio.hide();
+// $spoiledBox.hide();
+
+// $characterImg.click(function() {
+//     $(this).next().fadeIn(700);
+// });
+
+// $spoilerBox.click(function() {
+//     $(this).hide();
+//     $(this).next().fadeIn(300);
+// });
+
+// $ventureFam.on("click", function () {
+//     $ventures.show();
+//     $osi.hide();
+//     $monarchy.hide();
+//     $ventureFriends.hide();
+// });
+
+// $osiAgents.on("click", function () {
+//     $osi.show();
+//     $ventures.hide();
+//     $monarchy.hide();
+//     $ventureFriends.hide();
+// });
+
+// $monarchClique.on("click", function () {
+//     $monarchy.show();
+//     $ventures.hide();
+//     $osi.hide();
+//     $ventureFriends.hide();
+// });
+
+// $friends.on("click", function () {
+//     $ventureFriends.show();
+//     $ventures.hide();
+//     $monarchy.hide();
+//     $osi.hide();
+// });
+
+
+// EVERYTHING BELOW THIS IS IRRELEVENT TO AJAX STUFF
 
 // +_+_+_+_+_+_+_+_+_ TENZI GAME +_+_+_+_+_+_+_+_+_
 
