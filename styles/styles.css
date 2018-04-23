@@ -2,7 +2,6 @@
 
 :root {
     font-family: 'Century Gothic', 'Times New Roman', Times, serif;
-    
 }
 
 body {
@@ -10,6 +9,9 @@ body {
     background-color: rgb(27, 27, 27);
 }
 
+.wrap {
+    min-height: calc(100vh - 100px);
+}
 
 /* _-_-_-_-_-_-_-_-_-_ Heading Styles  _-_-_-_-_-_-_-_-_-_*/
 
@@ -33,14 +35,12 @@ header {
 }
 
 #main-heading,
-#secondary-heading,
-#home-main-heading {
+#secondary-heading {
     text-align: center;
     /* background-color: rgba(255, 255, 255, .3); */
 }
 
-#main-heading,
-#home-main-heading {
+#main-heading {
     width: 86%;
     letter-spacing: 1.27em;
     font-size: 2.4em;
@@ -48,19 +48,10 @@ header {
     margin: 0 auto;
     color: #191919;
     text-shadow: white 4px 4px 10px;
-    padding-top: 20px;
-}
-
-#main-heading {
-
-}
-
-#home-main-heading {
     padding-top: 35px;
 }
 
-#secondary-heading,
-#home-secondary-heading {
+#secondary-heading {
     font-size: 1.36em;
     letter-spacing: .16em;
     background-color: rgba(255, 255, 255, .88);
@@ -69,7 +60,7 @@ header {
     text-align: center;
 }
 
-#home-secondary-heading {
+#secondary-heading {
     margin-top: 240px;
 }
 
@@ -78,14 +69,7 @@ header {
         color: black;
 }
 
-#home-secondary-heading a:link,
-    a:visited {
-        color: black;
-}
-
-
-#secondary-heading a:hover,
-#home-secondary-heading a:hover {
+#secondary-heading a:hover {
     color: rgb(116, 19, 19);
 }
 
@@ -95,6 +79,12 @@ header {
 #home_title_cont {
     color: white;
     display: flex;
+}
+
+#home_title {
+    font-size: 3.4rem;
+    margin-bottom: 50px;
+    border-bottom: 2px solid white;
 }
 
 .as_p {
@@ -112,6 +102,44 @@ main {
     width: 87%;
     margin: 0 auto;
     margin-top: 46px;
+    color: white;
+}
+
+#news_videos_cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#news {
+    width: 60%;
+}
+
+#news h2 {
+    font-size: 2.75rem;
+    margin-bottom: 30px;
+}
+
+#videos {
+    padding: 18px 24px;
+    border: solid 1px white;
+    width: 32%;
+    height: 380px;
+}
+
+#videos h3 {
+    font-size: 2.4rem;
+}
+
+#videos ul li {
+    list-style: circle;
+}
+
+#videos ul li a,
+#news  a {
+    font-size: 1.3rem;
+    color: white;
 }
 
 h2 {
@@ -122,21 +150,82 @@ h2 {
 
 /* _-_-_-_-_-_-_-_-_-_ Main Content (characters) Styles  _-_-_-_-_-_-_-_-_-_*/
 
+#char_main {
+    margin-bottom: 100px;
+    color: white;
+
+}
+
 #char_bar {
     margin-top: 18px;
     margin-bottom: 36px;
+    text-align: center;
 }
 
-#char_bar_groups {
+#char_bar_sort, 
+#sort_groups_text {
     text-align: center;
     color: rgb(143, 143, 143);
+}
+
+#char_bar_sort{
+    font-size: 2.8rem;
+}
+
+#sort_groups_text {
+    border-top: solid 2px rgb(143, 143, 143);
     font-size: 2.1rem;
 }
 
-#venture_fam:hover,
+#sort_groups_div {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.char_sort:hover {
+    color: white;
+}
+
+#character_preview_cont {
+    display: flex;
+    flex-direction: row;
+    max-width: 810px;
+    max-height: 500px;
+    margin: 0 auto;
+    align-items: flex-end;
+}
+
+#character_preview_text_cont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#character_preview_text_1 {
+    font-size: 3.4rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#character_preview_text_2 {
+    font-size: 17rem;
+    text-align: center;
+    max-height: 300px;
+}
+
+#character_preview_ob,
+#character_preview_cb {
+    font-size: 25rem;
+}
+
+/* #venture_fam:hover,
 #osi_agents:hover,
 #monarch_clique:hover,
 #friends:hover {
+    cursor: pointer;
+} */
+
+.char_sort:hover {
     cursor: pointer;
 }
 

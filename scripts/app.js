@@ -7,12 +7,10 @@
 const $header = $('.header');
 const $heading2 = $('#secondary-heading');
 
-
+const $teaserText = $('#character_preview_cont');
+const $clickForInfo = $('#click_for_info');
 const $characterImg = $('.character_img');
 const $characterCont = $('.character_cont');
-const $characterBio = $('.character_bio');
-const $spoilerBox = $('.spoiler_box');
-const $spoiledBox = $('.spoiled_box');
 const $adult = $('#as_adult');
 const $swim = $('#as_swim');
 const $charBar = $('#char_bar');
@@ -26,8 +24,8 @@ const $monarchy = $('.monarch_crew');
 const $ventureFriends = $('.venture_friend');
 
 
-var isRollBtnClicked = false;
-var sides = 6;
+let isRollBtnClicked = false;
+let sides = 6;
 const $rollDiceBtn = $('#roll_dice');
 const $4sided = $('#4_sides');
 const $6sided = $('#6_sides');
@@ -36,6 +34,7 @@ const $12sided = $('#12_sides');
 const $20sided = $('#20_sides');
 const $startTimerBtn = $('#start_timer_btn');
 const $go = $('#go');
+let timeLeft = 100;
 const $timerDisplay = $('#timer_display');
 const $clearBtn = $('#clear_dice_boxes');
 const $diceBoxes = $('.die_display_box');
@@ -59,7 +58,7 @@ const $dieNumber9 = $('#die_display_number_9');
 const $freeze9 = $('#freeze_9');
 const $dieNumber10 = $('#die_display_number_10');
 const $freeze10 = $('#freeze_10');
-var diceActive = [  $dieNumber1, 
+let diceActive = [  $dieNumber1, 
                     $dieNumber2, 
                     $dieNumber3, 
                     $dieNumber4, 
@@ -69,12 +68,12 @@ var diceActive = [  $dieNumber1,
                     $dieNumber8, 
                     $dieNumber9, 
                     $dieNumber10];
-var diceFrozen = [];
+let diceFrozen = [];
 const $tenziWin = $('#declare_tenzi');
 const $logTenzi = $('#log_tenzi');
 const $runningScore = $('#running_score');
-var tenziNumber = 0;
-var newRound = true;
+let tenziNumber = 0;
+let newRound = true;
 
 
 // +_+_+_+_+_+_+_+_+_ Home Page +_+_+_+_+_+_+_+_+_
@@ -97,8 +96,11 @@ $header.on({
 
 // +_+_+_+_+_+_+_+_+_ Character Page +_+_+_+_+_+_+_+_+_
 
+$clickForInfo.hide();
 
 $('.char_sort').click(function() {
+    $teaserText.hide();
+    $clickForInfo.show();
     var $this = $(this);
     $('.char_sort').removeClass('char_sort_clicked');
     $this.addClass('char_sort_clicked');
@@ -116,47 +118,50 @@ $('.char_sort').click(function() {
 			
 			for (let i = 0; i < response.length; i++) {
 				if ( response[i].subset === sort_id) {
-					var $characterHTML = '<div class="character_cont ';
-                    $characterHTML += response[i].sortClass + '" id="' + response[i].contId + '">';
+					var $characterHTML = '<div class="character_cont';
+                    $characterHTML += '" id="' + response[i].contId + '">';
                     $characterHTML += '<img class="character_img" id="' + response[i].imageId + '" src="' + response[i].imageSrc + '">';
+                    $characterHTML += '<div class="character_bio">';
 
-                    $characterHTML += '</div>' // closing char_cont div tag
+                    if ( response[i].spoiler === true ) {
+                        $characterHTML += '<div class="character_top_line">';
+                    }
+
+                    $characterHTML += '<h3 class="character_name">' + response[i].name + '</h3>';
+                    
+                    if ( response[i].spoiler === true ) {
+                        $characterHTML += '<div class="spoiler_box"><h3 class="spoiler_text">Reveal Spoiler</h3></div>';
+                        $characterHTML += '<div class="spoiled_box"><h3 class="spoiled_text">' + response[i].spoilerText + '</h3></div></div>';
+                    }
+
+                    $characterHTML += '<p class="character_desc">' + response[i].description + '</p>';
+
+                    $characterHTML += '</div>'; // closing character_bio div tag
+                    $characterHTML += '</div>'; // closing character_cont div tag
 
 					$container.append($characterHTML);
-				}
-			}
-		}
-	});
+                }
+                const $characterBio = $('.character_bio');
+                const $spoilerBox = $('.spoiler_box');
+                const $spoiledBox = $('.spoiled_box');
+
+                $characterBio.hide();
+                $('.character_img').click(function() {
+                    $(this).next().fadeIn(700);
+                });
+
+                $spoiledBox.hide();
+                $spoilerBox.click(function() {
+                    $(this).hide();
+                    $spoiledBox.fadeIn(300);
+                });
+            } // end json array navigation
+            
+		} // end success function
+
+    }); // end ajax request
+
 });
-
-// var charHTML = '<h2>[ click an image for more info ]</h2> <div id="character_display">';
-
-// $('.char_sort').click(function() {
-    //  $('.char_sort').removeClass('char_sort_clicked');
-    //  $(this).addClass('char_sort_clicked');
-//     var sortKeyword = $('.char_sort_clicked').text();
-
-//     // Me trying to use the same method as you for the AJAX part
-//     $.ajax({
-      //   url: "../characters.json",
-      //   dataType: "json",
-//         success: function(response) {
-//             for (let character of response.characterList) {
-//                 charHTML += '<div class="character_cont ';
-//                 if (character == sortKeyword) {
-//                     charHTML += character.sortClass + '" id="' + character.contId + '">';
-//                     charHTML += '<img class"character_img" id="' + character.imageId + '" src="' + character.imageSrc + '">';
-//                     charHTML += '<div class="character_bio">';
-//                     charHTML += '<h3 class="character_name">' + character.name + '</h3>';
-//                     charHTML += '<p class="character_desc">' + character.description + '</p></div>';
-//                     charHTML += '</div>';
-//                 }
-//                 charHTML += '</div>';
-//             }
-//             $('#character_display').html(charHTML);
-//         }
-//     });
-
 
 // BELOW IS THE WAY I DID THIS WITHOUT AJAX
 
@@ -199,9 +204,6 @@ $('.char_sort').click(function() {
 //     $monarchy.hide();
 //     $osi.hide();
 // });
-
-
-// EVERYTHING BELOW THIS IS IRRELEVENT TO AJAX STUFF
 
 // +_+_+_+_+_+_+_+_+_ TENZI GAME +_+_+_+_+_+_+_+_+_
 
@@ -361,7 +363,7 @@ function gameOverAlert() {
     alert("Time's up, motherfucker! Your score is " + tenziNumber + ".");
 }
 
-var timeLeft = 100;  // !@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@ variable to be transported above @!@!@!@!@!@!@!@!@!@
+  // !@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@ variable to be transported above @!@!@!@!@!@!@!@!@!@
 
 function countDown() {
     if ( timeLeft > 0 ) {

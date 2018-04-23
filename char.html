@@ -9,107 +9,45 @@
   </head>
   
   <body>
-    <header>
-      <div id="header-wrapper">
-        <h1 id="main-heading">VENTURE BROS. CHARACTERS</h1>
-        <nav><h3 id="secondary-heading"><a href="index.html">Home</a> | <a href="char.html">Characters</a> | <a href="v_tenzi.html">Venture Tenzi</a></h3></nav>
-      </div>
-    </header>
+    <div class="wrap">
+      <header>
+        <div id="header-wrapper">
+          <h1 id="main-heading">VENTURE BROS.</h1>
+          <nav><h3 id="secondary-heading"><a href="index.html">Home</a> | <a href="char.html">Characters</a> | <a href="v_tenzi.html">Venture Tenzi</a></h3></nav>
+        </div>
+      </header>
 
-    <main>
+      <main id="char_main">
 
         <div id="char_bar">
-          <h3 id="char_bar_groups">SORT: <span class="char_sort" id="venture_fam">Venture Family</span> | <span class="char_sort" id="osi_agents">OSI Agents</span> | <span class="char_sort" id="monarch_clique">Monarch Crew</span> | <span class="char_sort" id="friends">Friends</span></h3>
-		  </div>
-
-		  <div class="characters">
-			  
-		  </div>
-
-        <!-- BELOW IS THE HTML I HAVE BEEN TRYING TO 
-        GENERATE WITH AJAX, I LEFT IT AS A MODEL -->
-
-        <!-- <h2>[ click an image for more info ]</h2>
-        <div id="character_display"> -->
-
-        <!-- <div class="character_cont venture_family" id="dr_venture_cont">
-          <img class="character_img" id="dr_venture_img" src="images/dr_venture.jpg" alt="Dr. Thaddeus S. 'Rusty' Venture" title="Dr. Thaddeus S. 'Rusty' Venture">
-          <div class="character_bio">
-            <h3 class="character_name">Dr. Venture</h3>
-            <p class="character_desc">Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay.</p>
-          </div>
-        </div>
-        
-        <div class="character_cont venture_family" id="hank_cont">
-          <img class="character_img" id="hank_img" src="images/hank.jpg" alt="Henry Allen Venure" title="Henry Allen Venture">
-          <div class="character_bio">
-            <h3 class="character_name">Hank Venture</h3>
-            <p class="character_desc">Henry Allen Venture, or Hank as he prefers to be called, is the oldest of the Venture twins, as well as the more rebellious of the two. He, like his father before him, hates the jet-setting and dangerous life of a de facto boy adventurer, and often expresses this frustration via sass mouth typically directed at Dr. Venture. He idolizes his bodyguard, Brock, and takes every chance he can get to hang around with and attempt to impress him. Hank is also the more girl-crazy of the Venture boys, developing a crush for the compound's Mail Delivery Woman at an early age.</p>
-          </div>
-        </div>
-
-        <div class="character_cont venture_family" id="dean_cont">
-          <img class="character_img" id="dean_img" src="images/dean.jpg" alt="Dean Venture" title="Dean Venture">
-          <div class="character_bio">
-            <h3 class="character_name">Dean Venture</h3>
-            <p class="character_desc">Dean Venture, the slightly younger Venture boy, is the far more sensitive, polite, and academically inclined of the two. Dean has a long-term crush on Triana, the daughter of his necromancer neighbor, Dr. Orpheus; he pines after her for years and his intense love for her even allows the magic of Dr. Orpheus to rescue the Venture family a time or two. Dr. Venture often tries to pigeonhole Dean into following in his footsteps and entering the super science game. He goes along begrudgingly, either not wanting to disappoint his father or being too much of a candy-ass to rebel like his brother Hank.</p>
-          </div>
-        </div>
-
-      <div class="character_cont osi" id="brock_cont">
-        <img class="character_img" id="brock_img" src="images/brock.jpg" alt="Brock Sampson" title="Brock motherfucking Sampson">
-        <div class="character_bio">
-          <h3 class="character_name" id="brock_name">Brock Sampson</h3>
-          <p class="character_desc">Brock Sampson is perhaps the most mythic character in the Venture Bros. universe. Brock joined the army after being thrown out of college and eventually made it into the Office of Secret Intellignce, or OSI. There he eventually earned notoriety and even celebrity status in the organization for his strength, brutality, combat expertise, and incredible effectiveness at his job as a government spy. As the bodyguard to the Venture family, Brock kills any and every threat to the family that comes along (except of course Guild-sanctioned arches, though only for bureaucratic reasons). Brock is the epitome of Robert Plant-esque hypermasculinity and raw sexual energy.</p>
-        </div>
-      </div>
-
-      <div class="character_cont monarch_crew" id="h21_cont">
-        <img class="character_img" id="h21_img" src="images/h21.jpg" alt="Henchman 21" title="Henchman 21">
-        <div class="character_bio">
-          <h3 class="character_name" id="brock_name">Henchman 21</h3>
-          <p class="character_desc">Brock Sampson is perhaps the most mythic character in the Venture Bros. universe. Brock joined the army after being thrown out of college and eventually made it into the Office of Secret Intellignce, or OSI. There he eventually earned notoriety and even celebrity status in the organization for his strength, brutality, combat expertise, and incredible effectiveness at his job as a government spy. As the bodyguard to the Venture family, Brock kills any and every threat to the family that comes along.</p>
-        </div>
-      </div>
-  
-      <div class="character_cont monarch_crew" id="h24_cont">
-        <img class="character_img" id="h24_img" src="images/h24.jpg" alt="Henchman 24" title="Henchman 24">
-        <div class="character_bio">
-          <div class="character_top_line">
-            <h3 class="character_name" id="h24_name">Henchman 24</h3>
-            <div class="spoiler_box">
-              <h3 class="spoiler_text">Reveal Spoiler</h3>
+          <h3 id="char_bar_sort">SORT</h3>
+            <div id="sort_groups_div">
+              <h3 id="sort_groups_text"><span class="char_sort" id="venture_fam">Venture Family</span> | <span class="char_sort" id="osi_agents">OSI Agents</span> | <span class="char_sort" id="monarch_clique">Monarch Crew</span> | <span class="char_sort" id="friends">'Friends'</span></h3>
             </div>
-            <div class="spoiled_box">
-              <h3 class="spoiled_text">Deceased</h3>
-            </div>
-          </div>
-          <p class="character_desc">Brock Samson is perhaps the most mythic character in the Venture Bros. universe. Brock joined the army after being thrown out of college and eventually made it into the Office of Secret Intellignce, or OSI. There he eventually earned notoriety and even celebrity status in the organization for his strength, brutality, combat expertise, and incredible effectiveness at his job as a government spy. As the bodyguard to the Venture family, Brock kills any and every threat to the family that comes along (except of course Guild-sanctioned arches, though only for bureaucratic reasons).</p>
         </div>
-      </div>
 
-      <div class="character_cont venture_friend" id="dermott_cont">
-        <img class="character_img" id="dermott_img" src="images/dermott.jpg" alt="Dermott Fictel" title="Dermott Fictel">
-        <div class="character_bio">
-          <div class="character_top_line">
-            <h3 class="character_name" id="dermott_name">Dermott Fictel</h3>
-            <div class="spoiler_box">
-              <h3 class="spoiler_text">Reveal Spoiler</h3>
+        <div id="character_preview_cont">
+          <h1 id="character_preview_ob">[</h1>
+            <div id="character_preview_text_cont">
+              <h1 id="character_preview_text_1">Who Do You Want To</h1>
+              <h1 id="character_preview_text_2">SEE?</h1>
             </div>
-            <div class="spoiled_box">
-              <h3 class="spoiled_text">Dr. Venture's Illegitimate Son</h3>
-            </div>
-          </div>
-          <p class="character_desc">Brock Sampson is perhaps the most mythic character in the Venture Bros. universe. Brock joined the army after being thrown out of college and eventually made it into the Office of Secret Intellignce, or OSI. There he eventually earned notoriety and even celebrity status in the organization for his strength, brutality, combat expertise, and incredible effectiveness at his job as a government spy. As the bodyguard to the Venture family, Brock kills any and every threat to the family that comes along.</p>
+          <h1 id="character_preview_cb">]</h1>
         </div>
-      </div> -->
-      <!-- </div> -->
-    </main>      
-        
 
-    <footer>
-      <p>&copy;2018</p>
-    </footer>
+        <h2 id="click_for_info">[ click an image for more info ]</h2>
+
+        <div class="characters">
+          
+        </div>
+
+      </main>      
+
+      <footer>
+        <p>&copy;2018</p>
+      </footer>
+
+    </div>
   
   <script src="scripts/jquery-3.3.1.js"></script>
   <script src="scripts/app.js"></script>

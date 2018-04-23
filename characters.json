@@ -31,6 +31,7 @@
 	},
 	{
 		"name": "Brock Samson",
+		"contId": "brock_cont",
 		"imageSrc": "images/brock.jpg",
 		"subset": "OSI Agents",
 		"spoiler": false,
@@ -38,25 +39,28 @@
 	},
 	{
 		"name": "Henchman 21",
+		"contId": "h21_cont",
 		"imageSrc": "images/h21.jpg",
 		"subset": "Monarch Crew",
 		"spoiler": false,
-		"description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
+		"description": "Henchman 21, or more often known simply as 21, is one half of the villainous Monarch's most reliable henching duo, somehow. He was kidnapped by the Monarch's henchmen team when he was 13 years old and has been henching for the Monarch ever since. Both he and his best friend, Henchman 24, are both unabashed nerds. They often engage in heated debates over pop culture trivia and fan speculation, such as whether or not the Smurfs are mammals. He is often the butt of light-hearted jokes by 24 about his weight."
 	},
 	{
 		"name": "Henchman 24",
+		"contId": "h24_cont",
 		"imageSrc": "images/h24.jpg",
 		"subset": "Monarch Crew",
 		"spoiler": true,
 		"spoilerText": "Deceased",
-		"description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
+		"description": "Henchman 24, or just 24, is the other half of the Monarch's most reliable henching duo. He is just as nerdy as 21, and just as quick to do all he can to avoid the drudgery and danger involved in being a henchman. He, like 21, is not a particularly skilled or intelligent henchman, but more uses his extensive knowledge of superhero cliches to avoid death. In the words of 21 he looks like, 'Seinfeld with a unibrow,' and sounds like 'Ray Romano' according to the Monarch. At one point his primary mode of transportation, aside from the Monarch's giant flying cacoon, is a crappy Nissan Stanza he borrowed from his dad."
 	},
 	{
 		"name": "Dermott Fictel",
+		"contId": "dermott_cont",
 		"imageSrc": "images/dermott.jpg",
-		"subset": "Friends",
+		"subset": "'Friends'",
 		"spoiler": true,
 		"spoilerText": "Dr. Venture's Illegitimate Son",
-		"description": "Dr. Thaddeus S. Venture, formerly known as Rusty Venture and later as TS, most often known as Dr. Venture or simply Doc, is the son of the late, great Dr. Jonas Venture Senior, a world-renowned super scientist and adventurer. As a child, Doc was perhaps the most famous and admired boy-advanturer of all time. As an adult, he is most known as a petty, obnoxious, pill-popping failure of a super scientist and father. His childhood moniker, 'Rusty Venture,' eventually becomes the name of a series of lurid sex acts, much to his dismay."
+		"description": "Dermott meets the Venture clan during the Rusy Venture Day Camp for Boy Adventurers. He makes a quick enemy out of Brock after he mocks the martial arts expo Brock puts on for the kids. He then befriends Hank and later harasses Triana Orpheus, earning him an ensuing surprise ass kicking at the hands of Dean, much to the enjoyment of Brock. Dermott can frequently be heard saying vulgar things and boasting about his alleged record of combat prowess and manliness. He eventually forms the band Shallow Gravy with Hank and H.E.L.P.eR."
 	}
 ]
