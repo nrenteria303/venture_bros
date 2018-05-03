@@ -119,17 +119,31 @@ main {
 #news h2 {
     font-size: 2.75rem;
     margin-bottom: 30px;
+    color: rgb(255, 176, 5);
+}
+
+article {
+    border-bottom: solid white 1px;
+}
+
+article:nth-child(n + 1) {
+    margin-top: 16px;
+}
+
+article:last-child {
+    border-bottom: none;
 }
 
 #videos {
     padding: 18px 24px;
     border: solid 1px white;
     width: 32%;
-    height: 380px;
+    align-self: flex-start;
 }
 
 #videos h3 {
     font-size: 2.4rem;
+    color: lightblue;
 }
 
 #videos ul li {
@@ -154,6 +168,12 @@ h2 {
     margin-bottom: 100px;
     color: white;
 
+}
+
+#char_title {
+    font-size: 4rem;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #char_bar {
@@ -218,13 +238,6 @@ h2 {
     font-size: 25rem;
 }
 
-/* #venture_fam:hover,
-#osi_agents:hover,
-#monarch_clique:hover,
-#friends:hover {
-    cursor: pointer;
-} */
-
 .char_sort:hover {
     cursor: pointer;
 }
@@ -279,7 +292,7 @@ h2 {
 }
 
 .spoiler_box {
-    background-color: rgb(255, 176, 5)
+    background-color: rgb(255, 176, 5);
 }
 
 .spoiler_box:hover {
@@ -611,31 +624,148 @@ footer p {
 
 
 
-
-
-
-
-
-/* _-_-_-_-_-_-_-_-_-_   _-_-_-_-_-_-_-_-_-_*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* _-_-_-_-_-_-_-_-_-_ Media Queries Styles  _-_-_-_-_-_-_-_-_-_*/
 
+@media (max-width: 480px) {
 
+    /* ========== Header Styles ======== */
+
+    header {
+        background: url(../images/top_image_banner.jpg) no-repeat;
+        background-position-y: 0%;
+        background-size: 100%;
+        height: 230px;
+        border-bottom: solid black 1px;
+        box-shadow: 0 3px 12px black;
+    }
+    #main-heading {
+        letter-spacing: 1em;
+        font-size: 2em;
+        line-height: 1.3em;
+        padding-top: 25px;
+    }
+    #secondary-heading {
+        font-size: 1.09em;
+        letter-spacing: .11em;
+        margin-top: 90px;
+    }
+
+    /* ========== Home Page Styles ======== */
+
+    #home_title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    
+    .as_p,
+    #as_adult,
+    #as_swim {
+        display: none;
+    }
+    main {
+        width: 93%;
+        margin-top: 24px;
+    }
+    
+    #news_videos_cont {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    #news {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #news h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        color: rgb(255, 176, 5);
+    }
+
+    .headline {
+        font-size: 1.6em;
+    }
+    
+    #videos {
+        width: 100%;
+    }
+    
+    #videos h3 {
+        font-size: 2.2rem;
+    }
+
+        /* ========== Character Page Styles ======== */
+    
+    #char_main {
+        margin-bottom: 60px;    
+    }
+    
+    #char_title {
+        font-size: 3.4rem;
+    }
+    
+    #char_bar {
+        margin-top: 12px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    
+    #char_bar_sort, 
+    #sort_groups_text {
+        text-align: center;
+        color: rgb(143, 143, 143);
+    }
+    
+    #char_bar_sort{
+        font-size: 2.6rem;
+    }
+
+    #sort_groups_text {
+        border-top: solid 2px rgb(143, 143, 143);
+        font-size: 1.4rem;
+    }
+
+    #sort_groups_div {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    
+    .char_sort:hover {
+        color: white;
+    }
+    
+    #character_preview_cont {
+        width: 85%;
+        max-height: 460px;
+        margin: 0 auto;
+    }
+    
+    #character_preview_text_1 {
+        font-size: 1.4rem;
+    }
+    
+    #character_preview_text_2 {
+        font-size: 6rem;
+    }
+    
+    #character_preview_ob,
+    #character_preview_cb {
+        font-size: 10rem;
+    }
+
+    .character_cont {
+        width: 100%;  
+        flex-direction: column;
+    }
+
+    #click_for_info {
+        font-size: 1.4em;
+    }
+    
+}
 
 
 

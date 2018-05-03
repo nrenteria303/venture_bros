@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Dr. 'Rusty' Venture",
-		"sortClass": "venture_fam",
+		"sortId": "venture_fam",
 		"contId": "dr_venture_cont",
 		"imageID": "dr_venture_img",
 		"imageSrc": "images/dr_venture.jpg",
@@ -11,7 +11,7 @@
 	},
 	{
 		"name": "Hank Venture",
-		"sortClass": "venture_fam",
+		"sortId": "venture_fam",
 		"contId": "hank_cont",
 		"imageID": "hank_img",
 		"imageSrc": "images/hank.jpg",
@@ -21,7 +21,7 @@
 	},
 	{
 		"name": "Dean Venture",
-		"sortClass": "venture_fam",
+		"sortId": "venture_fam",
 		"contId": "dean_cont",
 		"imageID": "dean_img",
 		"imageSrc": "images/dean.jpg",
@@ -32,6 +32,7 @@
 	{
 		"name": "Brock Samson",
 		"contId": "brock_cont",
+		"sortId": "osi_agents",
 		"imageSrc": "images/brock.jpg",
 		"subset": "OSI Agents",
 		"spoiler": false,
@@ -40,6 +41,7 @@
 	{
 		"name": "Henchman 21",
 		"contId": "h21_cont",
+		"sortId": "monarch_crew",
 		"imageSrc": "images/h21.jpg",
 		"subset": "Monarch Crew",
 		"spoiler": false,
@@ -48,6 +50,7 @@
 	{
 		"name": "Henchman 24",
 		"contId": "h24_cont",
+		"sortId": "monarch_crew",
 		"imageSrc": "images/h24.jpg",
 		"subset": "Monarch Crew",
 		"spoiler": true,
@@ -57,10 +60,21 @@
 	{
 		"name": "Dermott Fictel",
 		"contId": "dermott_cont",
+		"sortId": "friends",
 		"imageSrc": "images/dermott.jpg",
 		"subset": "'Friends'",
 		"spoiler": true,
 		"spoilerText": "Dr. Venture's Illegitimate Son",
 		"description": "Dermott meets the Venture clan during the Rusy Venture Day Camp for Boy Adventurers. He makes a quick enemy out of Brock after he mocks the martial arts expo Brock puts on for the kids. He then befriends Hank and later harasses Triana Orpheus, earning him an ensuing surprise ass kicking at the hands of Dean, much to the enjoyment of Brock. Dermott can frequently be heard saying vulgar things and boasting about his alleged record of combat prowess and manliness. He eventually forms the band Shallow Gravy with Hank and H.E.L.P.eR."
+	},
+	{
+		"name": "David Bowie (The Sovereign)",
+		"contId": "sovereign",
+		"sortId": "guild_members",
+		"imageSrc": "images/the_sovereign.jpg",
+		"subset": "Guild Members",
+		"spoiler": true,
+		"spoilerText": "Not Really Bowie & Possibly Deceased",
+		"description": "David Bowie is first mentioned in Season 1 as the original owner of Roy Brisby's long-time companda, Ling Ling. He then makes his first appearance in the two-part Season 2 finale as The Sovereign, the highest ranking member of the Guild of Calamitous Intent; he gives Dr. Girlfriend away at her wedding to the Monarch. The Sovereign is a powerful shapeshifter, and can take the form of anything from a pack of cigarettes to a bald eagle to 'Two-Ton' 21. He survives the Battle of Cremation Creek despite being betrayed by Phantom Limb and Iggy Pop."
 	}
 ]
