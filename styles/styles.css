@@ -646,7 +646,7 @@ footer p {
 /* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
 
 
-@media (max-width: 480px) {
+@media (max-width: 6200px) {
 
     /* ========== Header Styles ======== */
 
@@ -673,7 +673,7 @@ footer p {
     /* ========== Home Page Styles ======== */
 
     #home_title {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         margin-bottom: 30px;
         text-align: center;
         padding-bottom: 10px;
@@ -751,10 +751,6 @@ footer p {
     #sort_groups_div {
         display: inline-block;
         margin: 0 auto;
-    }
-    
-    .char_sort:hover {
-        color: white;
     }
     
     #character_preview_cont {
@@ -848,8 +844,124 @@ footer p {
     
 }
 
+@media (max-width: 376px) {
+    header {
+        background-size: 100%;
+        height: 190px;
+    }
+    #main-heading {
+        font-size: 1.7em;
+        letter-spacing: .9em;
+    }
+    #secondary-heading {
+        font-size: 1em;
+        letter-spacing: .09em;
+        margin-top: 64px;
+    }
+    #videos h3 {
+        font-size: 2rem;
+    }
+    #char_title {
+        font-size: 2.9rem;
+    }
+    #char_bar {
+        margin-top: 12px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    #char_bar_sort{
+        font-size: 2.2rem;
+    }
+    #sort_groups_text {
+        font-size: 1.22rem;
+    }
+    #character_preview_cont {
+        width: 87%;
+    }
+    
+    #character_preview_text_1 {
+        font-size: 1rem;
+    }
+    
+    #character_preview_text_2 {
+        font-size: 5rem;
+    }
+    
+    #character_preview_ob,
+    #character_preview_cb {
+        font-size: 9rem;
+    }
+    #click_for_info {
+        font-size: 1.18em;
+    }
+    .character_name {
+        font-size: 1.35em;
+        margin: 20px 0px;
+    }
+    .spoiler_text,
+    .spoiled_text {
+        font-size: 1.24em;
+    }
+    #tenzi_title {
+        font-size: 2.6em;
+    }
+    
+    #roll_dice {
+        font-size: 1.1rem;
+        padding: 8px 8px;
+    }
+    
+    #call_side_btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 135px;
+    }
+    
+    .side_btn {
+        padding: 0px 6px;
+        width: 120px;
+        font-size: .92em;
+    }
 
+    #time_trial_cont {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        height: 50px;
+    }
+    
+    #timer_display {
+        font-size: 2.8rem;
+    }
+    #go {
+        font-size: 2.4rem;
+    }
+    .die_display_box {
+        height: 70px;
+        width: 70px;
+    }
 
-
-
-
+    .freeze_btn {
+        font-size: 1em;
+        padding: 0px 0px;
+    }
+    #start_timer_btn {
+        font-size: 1rem;
+        padding: 2px 8px;
+        height: 40px;
+    }
+    
+    #clear_dice_boxes {
+        border-radius: 18px;
+        padding: 2px 6px;
+        font-weight: bold;
+        height: 40px;
+    }
+    #declare_tenzi,
+    #log_tenzi {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 20px auto 10px;
+    }
+}
