@@ -1,4 +1,7 @@
-/* _-_-_-_-_-_-_-_-_-_ Global Styles  _-_-_-_-_-_-_-_-_-_*/
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_    Global    Styles     -_-_-_-_-_-_-_-_- */
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
 
 :root {
     font-family: 'Century Gothic', 'Times New Roman', Times, serif;
@@ -13,7 +16,11 @@ body {
     min-height: calc(100vh - 100px);
 }
 
-/* _-_-_-_-_-_-_-_-_-_ Heading Styles  _-_-_-_-_-_-_-_-_-_*/
+
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_     Header    Styles    -_-_-_-_-_-_-_-_- */
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
 
 header {
     margin-top: 0;
@@ -74,7 +81,10 @@ header {
 }
 
 
-/* _-_-_-_-_-_-_-_-_-_ Main Content (home) Styles  _-_-_-_-_-_-_-_-_-_*/
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_   Home   Page   Styles  -_-_-_-_-_-_-_-_- */
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
 
 #home_title_cont {
     color: white;
@@ -162,7 +172,11 @@ h2 {
     font-size: 30px;
 }
 
-/* _-_-_-_-_-_-_-_-_-_ Main Content (characters) Styles  _-_-_-_-_-_-_-_-_-_*/
+
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_  Character Page Styles  -_-_-_-_-_-_-_-_- */
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
 
 #char_main {
     margin-bottom: 100px;
@@ -345,7 +359,10 @@ h2 {
 }
 
 
-/* _-_-_-_-_-_-_-_-_-_ Main Content (tenzi) Styles  _-_-_-_-_-_-_-_-_-_*/
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_ Tenzi Page  Styles _-_-_-_-_-_-_-_-_-_-_- */
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
 
 #tenzi_title {
     font-size: 4em;
@@ -432,6 +449,7 @@ h2 {
 #tenzi_dice {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 40px;
 }
 
@@ -598,7 +616,11 @@ h2 {
     justify-content: space-around;
 }
 
-/* _-_-_-_-_-_-_-_-_-_ Footer Styles  _-_-_-_-_-_-_-_-_-_*/
+
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_     Footer    Styles    -_-_-_-_-_-_-_-_- */
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
 
 footer {
     height: 100px;
@@ -619,12 +641,10 @@ footer p {
 }
 
 
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_ Media Queries / Styles  -_-_-_-_-_-_-_-_- */
+/* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
 
-
-
-
-
-/* _-_-_-_-_-_-_-_-_-_ Media Queries Styles  _-_-_-_-_-_-_-_-_-_*/
 
 @media (max-width: 480px) {
 
@@ -763,6 +783,67 @@ footer p {
 
     #click_for_info {
         font-size: 1.4em;
+    }
+
+    #tenzi_title {
+        font-size: 3.2em;
+    }
+    
+    #game_btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 26px;
+    }
+    
+    #roll_btn_cont {
+        display: inline-flex;
+        justify-content: space-around;
+    }
+    
+    #roll_dice {
+        font-size: 1.3rem;
+        padding: 8px 12px;
+        max-height: 50px;
+    }
+    
+    #call_side_btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 135px;
+    }
+    
+    .side_btn {
+        padding: 0px 8px;
+        width: 126px;
+        border-radius: 10px;
+        margin-bottom: 4px;
+    }
+
+    #time_trial_cont {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        height: 50px;
+    }
+    
+    #timer_display,
+    #go {
+        font-size: 3.5rem;
+        height: 60px;
+    }
+
+    #tenzi_dice {
+        display: flex;
+        justify-content: space-around;
+        margin: 8px auto;
+        max-width: 96%;
+    }
+    
+    .die_display_box {
+        height: 88px;
+        width: 88px;
     }
     
 }

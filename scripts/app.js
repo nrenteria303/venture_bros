@@ -363,8 +363,6 @@ function gameOverAlert() {
     alert("Time's up, motherfucker! Your score is " + tenziNumber + ".");
 }
 
-  // !@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@!@ variable to be transported above @!@!@!@!@!@!@!@!@!@
-
 function countDown() {
     if ( timeLeft > 0 ) {
         timeLeft -= 1;
