@@ -149,6 +149,8 @@ article:last-child {
     border: solid 1px white;
     width: 32%;
     align-self: flex-start;
+    position: sticky;
+    top: 20px;
 }
 
 #videos h3 {
@@ -646,7 +648,85 @@ footer p {
 /* _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
 
 
-@media (max-width: 6200px) {
+@media (max-width: 1265px) {
+    #home_title {
+        font-size: 2.8rem;
+    }
+    .as_p,
+    #as_adult,
+    #as_swim {
+        font-size: 1.24em;
+    }
+    #news h2 {
+        font-size: 2.2rem;
+    }
+    #call_side_btns {
+        max-width: 1000px;
+    }
+    .side_btn {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1083px) {
+    #home_title {
+        font-size: 2.6rem;
+    }
+    .as_p,
+    #as_adult,
+    #as_swim {
+        font-size: 1.18em;
+    }
+    #news {
+        width: 60%;
+    }
+    #videos {
+        44%
+    }
+    #news h2 {
+        font-size: 2.3rem;
+        margin-bottom: 30px;
+    }
+    #secondary-heading {
+        margin-top: 180px;
+    }
+}
+
+@media (max-width: 864px ) {
+    #news_videos_cont {
+        display: inline-block;
+        width: 100%;
+    }
+    #news {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #videos {
+        width: 400px;
+    }
+        
+    #character_preview_cont {
+        max-width: 500px;
+        max-height: 460px;
+        margin: 0 auto;
+    }
+    
+    #character_preview_text_1 {
+        font-size: 2.1rem;
+    }
+    
+    #character_preview_text_2 {
+        font-size: 9rem;
+    }
+    
+    #character_preview_ob,
+    #character_preview_cb {
+        font-size: 15rem;
+    }
+}
+
+
+@media (max-width: 620px) {
 
     /* ========== Header Styles ======== */
 
@@ -689,30 +769,17 @@ footer p {
         margin-top: 24px;
     }
     
-    #news_videos_cont {
-        display: inline-block;
-        width: 100%;
-    }
-    
-    #news {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    
     #news h2 {
         font-size: 2.2rem;
         margin-bottom: 30px;
-        color: rgb(255, 176, 5);
     }
 
     .headline {
         font-size: 1.6em;
     }
-    
     #videos {
         width: 100%;
     }
-    
     #videos h3 {
         font-size: 2.2rem;
     }
@@ -753,8 +820,8 @@ footer p {
         margin: 0 auto;
     }
     
-    #character_preview_cont {
-        width: 85%;
+    #character_preview_cont {  
+        max-width: 340px;
         max-height: 460px;
         margin: 0 auto;
     }
@@ -813,7 +880,6 @@ footer p {
     .side_btn {
         padding: 0px 8px;
         width: 126px;
-        border-radius: 10px;
         margin-bottom: 4px;
     }
 
