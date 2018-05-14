@@ -23,7 +23,7 @@ const $osi = $('.osi');
 const $monarchy = $('.monarch_crew');
 const $ventureFriends = $('.venture_friend');
 
-
+let isStartTimeBtnClicked = false;
 let isRollBtnClicked = false;
 let sides = 6;
 const $rollDiceBtn = $('#roll_dice');
@@ -306,7 +306,7 @@ function rmvSideBtnClick() {
 
 $4sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page, jerk ass.");
+        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page.");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -316,7 +316,7 @@ $4sided.click( function() {
 
 $6sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page, jerk ass.");
+        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -326,7 +326,7 @@ $6sided.click( function() {
 
 $8sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page, jerk ass.");
+        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -336,7 +336,7 @@ $8sided.click( function() {
 
 $12sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page, jerk ass.");
+        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page.");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -346,7 +346,7 @@ $12sided.click( function() {
 
 $20sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page, jerk ass.");
+        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page.");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -360,7 +360,7 @@ $rollDiceBtn.click(function() {
 });
 
 function gameOverAlert() {
-    alert("Time's up, motherfucker! Your score is " + tenziNumber + ".");
+    alert("Time's up! Your score is " + tenziNumber + ".");
 }
 
 function countDown() {
@@ -371,9 +371,12 @@ function countDown() {
 }
 
 $startTimerBtn.click(function() {
-    if (isRollBtnClicked === true && timeLeft > 0) {
-        alert('You must start the time trial before rolling the dice. To start over, please refresh the page you asswipe.')
+    if (isStartTimeBtnClicked == true) {
+        alert('You already started the timer.');
+    } else if (isRollBtnClicked === true && timeLeft > 0) {
+        alert('You must start the time trial before rolling the dice. To start over, please clear the dice or refresh the page.')
     } else if (timeLeft > 0) {
+        isStartTimeBtnClicked = true;
         $tenziWin.hide();
         $logTenzi.show();
         $go.show().fadeOut(900);
@@ -429,10 +432,10 @@ freezeClick($dieNumber10, $freeze10);
 
 $tenziWin.click(function() {
     if ( isRollBtnClicked === false ) {
-        alert("Try rolling first, numb nuts.")
+        alert("You have to roll the dice first.")
     }
     else if ( $dieNumber1.text() === $dieNumber2.text() && $dieNumber1.text() === $dieNumber3.text() && $dieNumber1.text() === $dieNumber4.text() && $dieNumber1.text() === $dieNumber5.text() && $dieNumber1.text() === $dieNumber6.text() && $dieNumber1.text() === $dieNumber7.text() && $dieNumber1.text() === $dieNumber8.text() && $dieNumber1.text() === $dieNumber9.text() && $dieNumber1.text() === $dieNumber10.text() ) {
-        alert("Congratulations, candy ass! You're a winner!");
+        alert("Congratulations, you're a winner!");
     } else {
         alert("Cheater! You're a cheater! No Tenzi!")
     }
@@ -440,10 +443,10 @@ $tenziWin.click(function() {
 
 $logTenzi.click(function() {
     if ( isRollBtnClicked === false ) {
-        alert("Try rolling first, numb nuts.")
+        alert("You have to roll the dice first.")
     } else if ( newRound === false ) {
-        alert('Please clear the dice to start a new round, cheater.');
-    }else if ( $dieNumber1.text() === $dieNumber2.text() && $dieNumber1.text() === $dieNumber3.text() && $dieNumber1.text() === $dieNumber4.text() && $dieNumber1.text() === $dieNumber5.text() && $dieNumber1.text() === $dieNumber6.text() && $dieNumber1.text() === $dieNumber7.text() && $dieNumber1.text() === $dieNumber8.text() && $dieNumber1.text() === $dieNumber9.text() && $dieNumber1.text() === $dieNumber10.text() && timeLeft > 0) {
+        alert('Please clear the dice to start a new round.');
+    } else if ( $dieNumber1.text() === $dieNumber2.text() && $dieNumber1.text() === $dieNumber3.text() && $dieNumber1.text() === $dieNumber4.text() && $dieNumber1.text() === $dieNumber5.text() && $dieNumber1.text() === $dieNumber6.text() && $dieNumber1.text() === $dieNumber7.text() && $dieNumber1.text() === $dieNumber8.text() && $dieNumber1.text() === $dieNumber9.text() && $dieNumber1.text() === $dieNumber10.text() && timeLeft > 0) {
         if ( $4sided.hasClass('side_btn_click') ) {
         tenziNumber += 50;
         } else if ( $6sided.hasClass('side_btn_click') ) {
@@ -456,8 +459,10 @@ $logTenzi.click(function() {
             tenziNumber += 1000;
         }
         newRound = false;
+    } else if ( isStartTimeBtnClicked == true) {
+        alert("Cheater! You're a cheater! No Tenzi!");
     } else {
-        alert('Please refresh the page to begin a new game, dipshit');
+        alert('Please refresh the page to begin a new game.');
     }
     $runningScore.text(tenziNumber);
 });
