@@ -1,18 +1,40 @@
 
-// CHADDY POO, SCROLL DOWN TO "Character Page" 
-// SECTION FOR THE AJAX STUFF
+// +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
+// +_+_+_+_+_+_+_+_+_ Home Page +_+_+_+_+_+_+_+_+_
+// +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
+
 
 // +_+_+_+_+_+_+_+_+_ Variables +_+_+_+_+_+_+_+_+_
-
 const $header = $('.header');
 const $heading2 = $('#secondary-heading');
+const $adult = $('#as_adult');
+const $swim = $('#as_swim');
 
+
+$header.on({
+    mouseleave: function() {
+        let adultCount = 470;
+        $adult.delay(adultCount).queue(function (asWhite) { 
+            $(this).css('color', 'white'); 
+            asWhite();
+            });
+        $swim.delay(adultCount + 1140).queue(function (asWhite) { 
+            $(this).css('color', 'white'); 
+            asWhite();
+        });
+    }
+});
+
+
+// +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
+// +_+_+_+_+_+_+_+_+_ Character Page +_+_+_+_+_+_+_+_+_
+// +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
+
+// +_+_+_+_+_+_+_+_+_ Variables +_+_+_+_+_+_+_+_+_
 const $teaserText = $('#character_preview_cont');
 const $clickForInfo = $('#click_for_info');
 const $characterImg = $('.character_img');
 const $characterCont = $('.character_cont');
-const $adult = $('#as_adult');
-const $swim = $('#as_swim');
 const $charBar = $('#char_bar');
 const $ventureFam = $('#venture_fam');
 const $osiAgents = $('#osi_agents');
@@ -23,9 +45,126 @@ const $osi = $('.osi');
 const $monarchy = $('.monarch_crew');
 const $ventureFriends = $('.venture_friend');
 
+
+$clickForInfo.hide();
+
+$('.char_sort').click(function() {
+    $teaserText.hide();
+    $clickForInfo.show();
+    let $this = $(this);
+    $('.char_sort').removeClass('char_sort_clicked');
+    $this.addClass('char_sort_clicked');
+	let sort_id = $this.text();
+
+	$.ajax({
+		url: "./characters.json",
+		dataType: "json",
+		method: "get",
+		success: function(response) {
+			let $container = $('.characters');
+
+			$container.empty();
+			
+			for (let i = 0; i < response.length; i++) {
+				if ( response[i].subset === sort_id) {
+					let $characterHTML = '<div class="character_cont';
+                    $characterHTML += '" id="' + response[i].contId + '">';
+                    $characterHTML += '<img class="character_img" id="' + response[i].imageId + '" src="' + response[i].imageSrc + '">';
+                    $characterHTML += '<div class="character_bio">';
+
+                    if ( response[i].spoiler === true ) {
+                        $characterHTML += '<div class="character_top_line">';
+                    }
+
+                    $characterHTML += '<h3 class="character_name">' + response[i].name + '</h3>';
+                    
+                    if ( response[i].spoiler === true ) {
+                        $characterHTML += '<div class="spoiler_box"><h3 class="spoiler_text">Reveal Spoiler</h3></div>';
+                        $characterHTML += '<div class="spoiled_box"><h3 class="spoiled_text">' + response[i].spoilerText + '</h3></div></div>'; // closing spoiler & top line div tag
+                    }
+
+                    $characterHTML += '<p class="character_desc">' + response[i].description + '</p>';
+
+                    $characterHTML += '</div>'; // closing character_bio div tag
+                    $characterHTML += '</div>'; // closing character_cont div tag
+
+					$container.append($characterHTML);
+                }
+                const $characterBio = $('.character_bio');
+                const $spoilerBox = $('.spoiler_box');
+                const $spoiledBox = $('.spoiled_box');
+
+                $characterBio.hide();
+                $('.character_img').click(function() {
+                    $(this).next().fadeIn(700);
+                });
+
+                $spoiledBox.hide();
+                $spoilerBox.click(function() {
+                    $(this).hide();
+                    $spoiledBox.fadeIn(300);
+                });
+            } // end json array navigation
+            
+		} // end success function
+
+    }); // end ajax request
+
+});
+
+// BELOW IS THE WAY I DID THIS WITHOUT AJAX
+
+        // $characterBio.hide();
+        // $spoiledBox.hide();
+
+        // $characterImg.click(function() {
+        //     $(this).next().fadeIn(700);
+        // });
+
+        // $spoilerBox.click(function() {
+        //     $(this).hide();
+        //     $(this).next().fadeIn(300);
+        // });
+
+        // $ventureFam.on("click", function () {
+        //     $ventures.show();
+        //     $osi.hide();
+        //     $monarchy.hide();
+        //     $ventureFriends.hide();
+        // });
+
+        // $osiAgents.on("click", function () {
+        //     $osi.show();
+        //     $ventures.hide();
+        //     $monarchy.hide();
+        //     $ventureFriends.hide();
+        // });
+
+        // $monarchClique.on("click", function () {
+        //     $monarchy.show();
+        //     $ventures.hide();
+        //     $osi.hide();
+        //     $ventureFriends.hide();
+        // });
+
+        // $friends.on("click", function () {
+        //     $ventureFriends.show();
+        //     $ventures.hide();
+        //     $monarchy.hide();
+        //     $osi.hide();
+        // });
+
+
+
+// +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
+// +_+_+_+_+_+_+_+_+_ TENZI GAME +_+_+_+_+_+_+_+_+_
+// +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
+
+// +_+_+_+_+_+_+_+_+_ Variables +_+_+_+_+_+_+_+_+_
 let isStartTimeBtnClicked = false;
 let isRollBtnClicked = false;
 let sides = 6;
+const $infoIcn = $('#info-icn');
 const $rollDiceBtn = $('#roll_dice');
 const $4sided = $('#4_sides');
 const $6sided = $('#6_sides');
@@ -76,143 +215,15 @@ let tenziNumber = 0;
 let newRound = true;
 
 
-// +_+_+_+_+_+_+_+_+_ Home Page +_+_+_+_+_+_+_+_+_
-
-
-$header.on({
-    mouseleave: function() {
-        var adultCount = 440;
-        $adult.delay(adultCount).queue(function (asWhite) { 
-            $(this).css('color', 'white'); 
-            asWhite();
-            });
-        $swim.delay(adultCount + 1188).queue(function (asWhite) { 
-            $(this).css('color', 'white'); 
-            asWhite();
-        });
-    }
-});
-
-
-// +_+_+_+_+_+_+_+_+_ Character Page +_+_+_+_+_+_+_+_+_
-
-$clickForInfo.hide();
-
-$('.char_sort').click(function() {
-    $teaserText.hide();
-    $clickForInfo.show();
-    var $this = $(this);
-    $('.char_sort').removeClass('char_sort_clicked');
-    $this.addClass('char_sort_clicked');
-	// var sort_id = $this.attr('id');
-	var sort_id = $this.text();
-
-	$.ajax({
-		url: "../characters.json",
-		dataType: "json",
-		method: "get",
-		success: function(response) {
-			var $container = $('.characters');
-
-			$container.empty();
-			
-			for (let i = 0; i < response.length; i++) {
-				if ( response[i].subset === sort_id) {
-					var $characterHTML = '<div class="character_cont';
-                    $characterHTML += '" id="' + response[i].contId + '">';
-                    $characterHTML += '<img class="character_img" id="' + response[i].imageId + '" src="' + response[i].imageSrc + '">';
-                    $characterHTML += '<div class="character_bio">';
-
-                    if ( response[i].spoiler === true ) {
-                        $characterHTML += '<div class="character_top_line">';
-                    }
-
-                    $characterHTML += '<h3 class="character_name">' + response[i].name + '</h3>';
-                    
-                    if ( response[i].spoiler === true ) {
-                        $characterHTML += '<div class="spoiler_box"><h3 class="spoiler_text">Reveal Spoiler</h3></div>';
-                        $characterHTML += '<div class="spoiled_box"><h3 class="spoiled_text">' + response[i].spoilerText + '</h3></div></div>';
-                    }
-
-                    $characterHTML += '<p class="character_desc">' + response[i].description + '</p>';
-
-                    $characterHTML += '</div>'; // closing character_bio div tag
-                    $characterHTML += '</div>'; // closing character_cont div tag
-
-					$container.append($characterHTML);
-                }
-                const $characterBio = $('.character_bio');
-                const $spoilerBox = $('.spoiler_box');
-                const $spoiledBox = $('.spoiled_box');
-
-                $characterBio.hide();
-                $('.character_img').click(function() {
-                    $(this).next().fadeIn(700);
-                });
-
-                $spoiledBox.hide();
-                $spoilerBox.click(function() {
-                    $(this).hide();
-                    $spoiledBox.fadeIn(300);
-                });
-            } // end json array navigation
-            
-		} // end success function
-
-    }); // end ajax request
-
-});
-
-// BELOW IS THE WAY I DID THIS WITHOUT AJAX
-
-// $characterBio.hide();
-// $spoiledBox.hide();
-
-// $characterImg.click(function() {
-//     $(this).next().fadeIn(700);
-// });
-
-// $spoilerBox.click(function() {
-//     $(this).hide();
-//     $(this).next().fadeIn(300);
-// });
-
-// $ventureFam.on("click", function () {
-//     $ventures.show();
-//     $osi.hide();
-//     $monarchy.hide();
-//     $ventureFriends.hide();
-// });
-
-// $osiAgents.on("click", function () {
-//     $osi.show();
-//     $ventures.hide();
-//     $monarchy.hide();
-//     $ventureFriends.hide();
-// });
-
-// $monarchClique.on("click", function () {
-//     $monarchy.show();
-//     $ventures.hide();
-//     $osi.hide();
-//     $ventureFriends.hide();
-// });
-
-// $friends.on("click", function () {
-//     $ventureFriends.show();
-//     $ventures.hide();
-//     $monarchy.hide();
-//     $osi.hide();
-// });
-
-// +_+_+_+_+_+_+_+_+_ TENZI GAME +_+_+_+_+_+_+_+_+_
-
-
 $logTenzi.hide();
 $go.hide();
 
+$infoIcn.click( function() {
+    alert('How to play: Roll the virtual dice with the "Roll Active Dice" button. Try to get all of the dice to show the same face by freezing the ones you want to keep. When they all show the same face, hit the "Tenzi!" button to win. For an extra challenge, try a time trial and see how many points you can get before the time runs out!');
+});
+
 function rollActive(sides) {
-    for (var i = 0; i < diceActive.length; i += 1 ) {
+    for (let i = 0; i < diceActive.length; i ++ ) {
         diceActive[i].text(Math.floor(Math.random() * sides ) + 1);
         switch (diceActive[i].text()) {
             case '1':
@@ -300,13 +311,13 @@ function rollActive(sides) {
 }
 
 function rmvSideBtnClick() {
-    var rmvBtnElement = $(".side_btn_click");
+    let rmvBtnElement = $(".side_btn_click");
     rmvBtnElement.removeClass("side_btn_click");
 }
 
-$4sided.click( function() {
+$4sided.click( function() { 
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page.");
+        alert("You cannot switch dice after you begin rolling. To start over, please clear the dice or refresh the page.");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -316,7 +327,7 @@ $4sided.click( function() {
 
 $6sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page");
+        alert("You cannot switch dice after you begin rolling. To start over, please clear the dice or refresh the page");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -326,7 +337,7 @@ $6sided.click( function() {
 
 $8sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page");
+        alert("You cannot switch dice after you begin rolling. To start over, please clear the dice or refresh the page");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -336,7 +347,7 @@ $8sided.click( function() {
 
 $12sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page.");
+        alert("You cannot switch dice after you begin rolling. To start over, please clear the dice or refresh the page.");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -346,7 +357,7 @@ $12sided.click( function() {
 
 $20sided.click( function() {
     if (isRollBtnClicked === true) {
-        alert("You cannot switch dice after you begin rolling. To start over, please refresh the page.");
+        alert("You cannot switch dice after you begin rolling. To start over, please clear the dice or refresh the page.");
     } else {
         rmvSideBtnClick();
         $(this).addClass("side_btn_click");
@@ -391,7 +402,7 @@ function clearDice() {
         diceActive.unshift(diceFrozen.shift());
     };
     $('.freeze_btn_frozen').removeClass('freeze_btn_frozen');
-    for ( var i = 0 ; i < diceActive.length + diceFrozen.length ; i += 1 ) {
+    for ( let i = 0 ; i < diceActive.length + diceFrozen.length ; i += 1 ) {
         diceActive[i].removeClass("colonel_gentleman_die brock_die dean_die hank_die monarch_die dr_venture_die henchman_21_die henchman_24_die dr_orpheus_die triana_die molotov_die phantom_limb_die underbheit_die jonas_sr_die jonas_jr_die captain_die killenger_die kano_die action_man_die dr_girlfriend_die");
         diceActive[i].html('');
     };

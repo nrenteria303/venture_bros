@@ -124,6 +124,7 @@ main {
 
 #news {
     width: 60%;
+    perspective: 1200px;
 }
 
 #news h2 {
@@ -134,6 +135,14 @@ main {
 
 article {
     border-bottom: solid white 1px;
+    transition: all .2s ease-in-out;
+    transform-style: preserve-3d; 
+}
+
+article:hover {
+    transform: translateZ(40px);
+    background-color: #222;
+    box-shadow: 0 0 12px 8px #222;
 }
 
 article:nth-child(n + 1) {
@@ -166,6 +175,10 @@ article:last-child {
 #news  a {
     font-size: 1.3rem;
     color: white;
+}
+
+#videos ul li a:hover {
+    color: lightblue;
 }
 
 h2 {
@@ -267,16 +280,37 @@ h2 {
     width: 900px;  
     margin: 0 auto;
     display: flex; 
+    justify-content: space-around;
     margin-top: 30px;
 }
 
-.character_img {
+#img_links_cont {
     margin: 0 auto;
+}
+
+.character_img {
     height: 310px;
 }
 
 .character_img:hover {
     cursor: pointer;
+}
+.evolution_link_cont {
+    display: flex;
+}
+
+.evolution_link,
+.evolution_link:visited {
+    font-size: 14px;
+    color: white;
+}
+
+.evolution_link:first-of-type {
+    margin-right: auto;
+}
+
+.evolution_link:last-of-type {
+    margin-left: auto;
 }
 
 .character_name {
@@ -299,6 +333,7 @@ h2 {
 
 .character_top_line {
     display: flex;
+    justify-content: space-between;
 }
 
 .spoiler_box,
@@ -328,9 +363,9 @@ h2 {
     margin-bottom: 0;
 }
 
-#dr_venture_img {
+/* #dr_venture_img {
     width: 310px;
-}
+} */
 
 #hank_img {
     width: 265px;
@@ -348,16 +383,35 @@ h2 {
     margin: 22px opx 15px;
 }
 
-#h21_img {
+/* #h21_img {
     width: 335px;
-}
+} */
 
 #h24_img {
     width: 267px;
 }
 
-#dermott_img {
-    width: 327px;
+#ajax_link_cont {
+    display: flex;
+    justify-content: space-around;
+}
+
+#ajax_link {
+    color: white;
+    text-align: center;
+}
+
+
+.bio-fade-enter-active {
+    transition: all .4s ease-in;
+}
+
+.bio-fade-enter {
+    opacity: 0;
+}
+
+[v-cloak] {
+    display: none;
 }
 
 
@@ -368,6 +422,18 @@ h2 {
 
 #tenzi_title {
     font-size: 4em;
+}
+
+#info-icn {
+    text-align: center;
+    width: 40px;
+    margin: 0 auto;
+}
+
+#info-icn:hover {
+    font-weight: bold;
+    color: blue;
+    cursor: pointer;
 }
 
 #game_btns {
@@ -465,11 +531,11 @@ h2 {
     width: 100px;
     border: white solid 2px;
     margin: 10px 0 14px;
+    color: rgba(0,0,0,0);
 }
 
 .die_display_number {
-    color: white;
-    font-size: 4.4rem;
+    display: none;
 }
 
 .die_display_number_frozen {
@@ -630,8 +696,9 @@ footer {
     justify-content: center; 
     background-color: rgb(116, 19, 19);
     margin-top: 50px;
-    border-top: solid rgb(65, 65, 65) 2px;
+    border-top: solid black 2px;
     box-shadow: 0 -3px 12px black;
+    background: linear-gradient(3deg, black -280%, rgb(116, 19, 19) 77%, white 360%);
 }
 
 footer p {
@@ -662,6 +729,22 @@ footer p {
     }
     #call_side_btns {
         max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 135px;
+    }
+    #game_btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 26px;
+        width: 90%;
+    }
+    
+    #roll_btn_cont {
+        display: inline-flex;
+        justify-content: space-around;
     }
     .side_btn {
         width: 200px;
@@ -681,7 +764,7 @@ footer p {
         width: 60%;
     }
     #videos {
-        44%
+        width: 44%;
     }
     #news h2 {
         font-size: 2.3rem;
@@ -692,7 +775,16 @@ footer p {
     }
 }
 
+@media (max-width: 1014px) {
+    .as_p,
+    #as_adult,
+    #as_swim {
+        display: none;
+    }
+}
+
 @media (max-width: 864px ) {
+
     #news_videos_cont {
         display: inline-block;
         width: 100%;
@@ -759,11 +851,6 @@ footer p {
         padding-bottom: 10px;
     }
     
-    .as_p,
-    #as_adult,
-    #as_swim {
-        display: none;
-    }
     main {
         width: 93%;
         margin-top: 24px;
@@ -852,30 +939,12 @@ footer p {
         font-size: 3.2em;
     }
     
-    #game_btns {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-top: 26px;
-    }
-    
-    #roll_btn_cont {
-        display: inline-flex;
-        justify-content: space-around;
-    }
-    
     #roll_dice {
         font-size: 1.3rem;
         padding: 8px 12px;
         max-height: 50px;
     }
-    
-    #call_side_btns {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        max-width: 135px;
-    }
+
     
     .side_btn {
         padding: 0px 8px;

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles/styles.css">
+      <title>Venture Characters | VueJS</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  </head>
+  
+  <body>
+    <div class="wrap">
+      <header>
+        <div id="header-wrapper">
+          <h1 id="main-heading">VENTURE BROS.</h1>
+          <nav><h3 id="secondary-heading"><a href="index.html">Home</a> | <a href="char_vue.html">Characters</a> | <a href="v_tenzi.html">Venture Tenzi</a></h3></nav>
+        </div>
+      </header>
+
+      <main id="char_main">
+        
+        <h1 id="char_title">Meet the Characters</h1>
+
+        <div id="characters"> <!-- Start *characters* Vue Instance ~%~%~%~%~%~%~%~%~%~% -->
+
+
+          <div id="char_bar">
+            <h3 id="char_bar_sort">SORT</h3>
+              <div id="sort_groups_div">
+                <h3 id="sort_groups_text"><span @click="filterCharacters" class="char_sort" id="venture_fam">Venture Family</span> | <span @click="filterCharacters" class="char_sort" id="osi_agents">OSI Agents</span> | <span @click="filterCharacters" class="char_sort" id="monarch_crew">Monarch Crew</span> | <span @click="filterCharacters" class="char_sort" id="guild_members">Guild Members</span> | <span @click="filterCharacters" class="char_sort" id="friends">'Friends'</span></h3>
+              </div>
+          </div>
+
+
+          <h2 v-cloak v-show="sortTagClicked" id="click_for_info">[ click an image for more info ]</h2>
+
+          <div v-cloak v-for="character in characters" v-show="character.subset == sortSubset" class="character_cont" :id="character.contId">
+            <div id="img_links_cont">
+              <img @click="character.bioRevealed = true" class="character_img" :id="character.imageId" :src="character.images[character.imageIndex]" :alt="character.altText[character.imageIndex]" :title="character.altText[character.imageIndex]">
+              <div v-show="character.bioRevealed" class="evolution_link_cont">
+                <a class="evolution_link" v-show="character.images[character.imageIndex - 1]" @click.prevent="decreaseImageIndex(character)" href="#">&#8656; Previous Phase</a>
+                <a class="evolution_link" v-show="character.images[character.imageIndex + 1]" @click.prevent="increaseImageIndex(character)" href="#">Next Phase &#8658;</a>
+              </div>
+            </div>
+            <transition name="bio-fade">
+              <div v-show="character.bioRevealed" class="character_bio">
+                <div class="character_top_line">
+                  <h3 class="character_name">{{character.name}}</h3>
+                  <div v-if="character.spoiler" class="spoiler_box">
+                    <h3 @click="character.spoilerRevealed = true" v-if="!character.spoilerRevealed" class="spoiler_text">Reveal Spoiler</h3>
+                  </div>
+                  <div v-if="character.spoilerRevealed" class="spoiled_box">
+                    <h3 class="spoiled_text">{{character.spoilerText}}</h3>
+                  </div>
+                </div>
+                <p class="character_desc">{{character.description}}</p>
+              </div>
+            </transition>
+          </div>
+          <div v-show="!sortTagClicked" id="character_preview_cont">
+            <h1 id="character_preview_ob">[</h1>
+            <div id="character_preview_text_cont">
+                <h1 id="character_preview_text_1">Who Do You Want To</h1>
+                <h1 id="character_preview_text_2">SEE?</h1>
+            </div>
+            <h1 id="character_preview_cb">]</h1>
+          </div>
+
+        </div><!-- ~%~%~%~%~%~% End characters Vue Instance ~%~%~%~%~%~%~%~%~%~%~%~%~% -->
+
+      </main>     
+      
+      <div id="ajax_link_cont">
+        <a href="./char_ajax.html" id="ajax_link">Click here to view the AJAX version of this page.</a>
+      </div>
+
+      <footer>
+        <p>&copy;2018</p>
+      </footer>
+
+    </div>
+  
+  <!-- <script src="scripts/jquery-3.3.1.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="scripts/vue_app.js"></script>
+  </body>
+
+</html>
